@@ -1,47 +1,38 @@
 # 🎖️ TwitchBadgeHelper
 
-**Make your life easier** – Drag your badge PNG onto the `.bat` file and **BOOM!**  
-You’ve got all 3 sizes for your Twitch Sub-Badges in a blink of an eye.
+**Make your life easier** - drag your badge PNG onto the `.bat` file and **BOOM!**  
+You get all 3 sizes for your Twitch Sub-Badges in a blink of an eye.
 
 ## ✨ What it does
 
-- Automatically creates a folder named after your image (without the extension).
-- Resizes your 256x256 PNG to:
+- Automatically creates a folder named after your image, without the file extension.
+- Accepts PNG files of any size, including images that are not square.
+- Resizes your image to:
   - `18x18`
   - `36x36`
   - `72x72`
-- Saves them inside the new folder as:
+- Saves the resized files inside that new folder as:
   - `yourfilename-18x18.png`
   - `yourfilename-36x36.png`
   - `yourfilename-72x72.png`
 
-## 🛠️ Requirements
+## 🛠️ How it works
 
-This tool relies on **ImageMagick**, a powerful image conversion utility.
+This tool does not require any external image software anymore.
+It uses native Windows PowerShell commands together with the built-in .NET `System.Drawing` classes to load the source image, create new PNG bitmaps, and save the resized versions.
 
-### 🔧 Windows
+That means you only need a Windows system with PowerShell available. No ImageMagick, no extra install, no PATH setup.
 
-1. [Download ImageMagick](https://imagemagick.org/script/download.php#windows)
-2. During installation, check the option:  
-   ✅ *"Add application directory to your system path"*
-3. Confirm that `magick` works by opening Command Prompt and running:
+The script scales the source image directly into each target size, so it works even when the original file is wider than it is tall, taller than it is wide, or any other PNG dimension.
 
-```sh
-magick -version
-```
+## 🔧 Windows
 
-You should see version info. If not, restart your PC.
+1. Clone or download this repo.
+2. Place your PNG file next to `resizer.bat`.
+3. Drag your image file onto `resizer.bat`.
+4. A new folder will appear with your resized Twitch badge files inside.
 
-
-🧪 How to Use
-
-    Clone or download this repo.
-
-    Place your 256x256 PNG file next to resize-badge.bat.
-
-    Drag your image file onto resize-badge.bat.
-
-    A new folder will appear with your resized Twitch badge files inside.
+If you want the most predictable visual result, start with a square source image. Even so, the script will still produce the three required badge sizes automatically from any PNG dimensions.
 
 That’s it. Zero effort. Maximum results.
 
