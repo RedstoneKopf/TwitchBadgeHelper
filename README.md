@@ -28,9 +28,9 @@ The script scales the source image directly into each target size, so it works e
 ## 🔧 Windows
 
 1. Clone or download this repo.
-2. Place your PNG file next to `resizer.bat`.
+2. Put your PNG file wherever you want (it does not need to be next to `resizer.bat`).
 3. Drag your image file onto `resizer.bat`.
-4. A new folder will appear with your resized Twitch badge files inside.
+4. A new folder will be created automatically **in the same directory as your source image** with your resized Twitch badge files inside.
 
 If you want the most predictable visual result, start with a square source image. Even so, the script will still produce the three required badge sizes automatically from any PNG dimensions.
 
