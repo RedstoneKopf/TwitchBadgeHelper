@@ -34,10 +34,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command ^
   "    $destPath = Join-Path $destFolder ($baseName + '-' + $size + 'x' + $size + '.png'); " ^
   "    $bmp = New-Object System.Drawing.Bitmap($size, $size); " ^
   "    $g = [System.Drawing.Graphics]::FromImage($bmp); " ^
+  "    $g.CompositingMode = [System.Drawing.Drawing2D.CompositingMode]::SourceCopy; " ^
   "    $g.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic; " ^
-  "    $g.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::HighQuality; " ^
   "    $g.PixelOffsetMode = [System.Drawing.Drawing2D.PixelOffsetMode]::HighQuality; " ^
-  "    $g.Clear([System.Drawing.Color]::Transparent); " ^
   "    $g.DrawImage($img, 0, 0, $size, $size); " ^
   "    $g.Dispose(); " ^
   "    $bmp.Save($destPath, [System.Drawing.Imaging.ImageFormat]::Png); " ^
